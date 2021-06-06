@@ -9,14 +9,22 @@ class EmotionTable extends React.Component {
           {JSON.stringify(this.props.emotions)}
           <table className="table table-bordered">
             <tbody>
-            {
-                //Write code to use the .map method that you worked on in the Hands-on React lab to extract the emotions
-            }
+                {   
+                  Object.entries(this.props.emotions).map( (emotion, index) => {
+                    return (
+                        <tr key={index}>
+                        <td>{emotion[0]}</td>
+                        <td>{emotion[1]}</td>
+                        </tr> 
+                        )   
+                    }
+                  )  
+                }
             </tbody>
           </table>
           </div>
-          );
-        }
+        );
+    }
     
 }
 export default EmotionTable;
